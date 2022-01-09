@@ -8,7 +8,9 @@
  */
 function greet(name) {
   // Your code here
+  console.log(`Hello ${name}`)
 }
+greet("Ali");
 
 /**
  * isOdd(n):
@@ -21,8 +23,10 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+    return(n%2 != 0);
 }
-
+console.log(`is 7 odd?: ${isOdd(7)}`);
+console.log(`is 10 odd?: ${isOdd(10)}`);
 /**
  * oddsSmallerThan(n):
  * - receives a number n
@@ -34,7 +38,13 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  let smallerOdd = n/2;
+  smallerOdd = smallerOdd - ((n%2)/2);
+  return (smallerOdd);
 }
+console.log(`number of odd numbers smaller than 7: ${oddsSmallerThan(7)}`);
+console.log(`number of odd numbers smallers than 15: ${oddsSmallerThan(15)}`);
+
 
 /**
  * squareOrDouble(n):
@@ -48,6 +58,20 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if(isOdd(n))
+  {
+    return (n**2);
+  }else
+  {
+    return (n*2);
+  }
 }
+console.log(`1- square if it's odd:
+2- double if it's even: 
+  16 is: ${squareOrDouble(16)}
+  9 is: ${squareOrDouble(9)}
+`);
+
+
 
 module.exports = { greet, isOdd, oddsSmallerThan, squareOrDouble };
